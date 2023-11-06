@@ -87,9 +87,8 @@ void reading_()
     	for (int i = 0; i < 25440; ++i) {
     		int data_read;
 			data_read = BRAM2(i);
-			//printf("%d\r\n", data_read);
-			unsigned char* data_r_bytes = (unsigned char*)&data_read;
 
+			unsigned char* data_r_bytes = (unsigned char*)&data_read;
 		}
     }
 }
@@ -167,7 +166,7 @@ int main()
 		return XST_FAILURE;
 	}
 
-	px_config2 = XBram_LookupConfig(XPAR_BRAM_1_DEVICE_ID);
+    px_config2 = XBram_LookupConfig(XPAR_BRAM_1_DEVICE_ID);
 	if (px_config2 == (XBram_Config *) NULL) {
 		printf("Failed XBram_LookupConfig2\r\n");
 		return XST_FAILURE;
